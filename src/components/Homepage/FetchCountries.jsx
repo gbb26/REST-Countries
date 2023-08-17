@@ -6,11 +6,17 @@ import { useEffect, useState } from "react";
 function FetchCountries(props) {
   const findCountry = (event) => {
     event.preventDefault();
-    getData(
-      `https://restcountries.com/v3.1/name/${inputCountry}?fields=name,flags,population,region,capital`
-    );
+    if (inputCountry.length > 0) {
+      getData(
+        `https://restcountries.com/v3.1/name/${inputCountry}?fields=name,flags,population,region,capital`
+      );
+    } else {
+      getData(
+        "https://restcountries.com/v3.1/independent?status=true&fields=name,flags,population,region,capital"
+      );
+    }
   };
-  const [inputCountry, setInputCountry] = useState("");
+  const [inputCountry, setInputCountry] = useState("India");
   const [countriesData, setCountriesData] = useState([]);
 
   const getData = async (apiUrl) => {
@@ -115,7 +121,7 @@ function FetchCountries(props) {
                 flag={items.flags.png ? items.flags.png : ""}
                 name={items.name.common ? items.name.common : ""}
                 capital={items.capital ? items.capital[0] : ""}
-                region={items.region ? items.region : ''}
+                region={items.region ? items.region : ""}
                 population={items.population}
               />
             </li>

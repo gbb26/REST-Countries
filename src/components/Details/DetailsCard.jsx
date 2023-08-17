@@ -1,10 +1,5 @@
-
 function CardDetails() {
-  return (
-    <div>
-      
-    </div>
-  )
+  return <></>;
 }
 
 export default CardDetails;
