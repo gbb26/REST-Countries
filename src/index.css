@@ -1,0 +1,61 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Nunito Sans', sans-serif !important;
+  transition: all 0.2s;
+  box-sizing: border-box;
+}
+
+:root {
+  /*  (Dark Mode Elements) */
+  --Dark-Blue: hsl(209, 23%, 22%);
+  /*  (Dark Mode Background) */
+  --Dark-Mode-Background: hsl(207, 26%, 17%);
+  /*  (Light Mode Text) */
+  --Light-Mode-Text: hsl(200, 15%, 8%);
+  /*  (Light Mode Input) */
+  --Dark-Gray: hsl(0, 0%, 52%);
+  /* (Light Mode Background) */
+  --Very-Light-Gray: hsl(0, 0%, 93%);
+  /*  (Dark Mode Text & Light Mode Elements) */
+  --White: hsl(0, 0%, 100%);
+}
+
+.light {
+  background-color: var(--Very-Light-Gray);
+  color: var(--Light-Mode-Text);
+}
+
+.dark {
+  background-color: var(--Dark-Mode-Background);
+  color: var(--White);
+}
+
+.card-light {
+  color: var(--Light-Mode-Text) !important;
+  /* background-color: var(--White) !important; */
+  background-color:rgb(255, 255, 251) !important;
+  
+}
+
+.card-dark {
+  color: var(--White) !important;
+  background-color: var(--Dark-Blue) !important;
+}
+
+.light-mode-text-input {
+  color: var(--Dark-Gray);
+  background-color: var(--White);
+}
+
+@media screen and (max-width:598px) {
+  .forms {
+    height: auto !important;
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-evenly !important;
+    align-items: start !important;
+    gap: 20px;
+  }
+}
