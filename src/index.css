@@ -4,6 +4,8 @@
   font-family: 'Nunito Sans', sans-serif !important;
   transition: all 0.2s;
   box-sizing: border-box;
+  word-wrap: break-word;
+  word-break: break-all;
 }
 
 :root {
@@ -34,8 +36,8 @@
 .card-light {
   color: var(--Light-Mode-Text) !important;
   /* background-color: var(--White) !important; */
-  background-color:rgb(255, 255, 251) !important;
-  
+  background-color: rgb(255, 255, 251) !important;
+
 }
 
 .card-dark {
