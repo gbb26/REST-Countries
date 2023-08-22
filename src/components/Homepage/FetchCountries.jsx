@@ -2,6 +2,7 @@
 import { Box } from "@mui/material";
 import HomepageCard from "./HomepageCard";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 // region population name flag capital
 function FetchCountries(props) {
   const findCountry = (event) => {
@@ -23,7 +24,6 @@ function FetchCountries(props) {
     const d = await fetch(apiUrl);
     const data = await d.json();
     setCountriesData(data);
-    console.log(data);
   };
   useEffect(() => {
     getData(
@@ -115,7 +115,12 @@ function FetchCountries(props) {
       >
         {countriesData.map((items, index) => {
           return (
-            <li key={index}>
+            <Link
+              style={{ textDecoration: "none" }}
+              to="/countryInfo"
+              key={index}
+              state={items.capital ? items.capital : "New Delhi"}
+            >
               <HomepageCard
                 cardTheme={props.theme === "light" ? "card-light" : "card-dark"}
                 flag={items.flags.png ? items.flags.png : ""}
@@ -124,7 +129,7 @@ function FetchCountries(props) {
                 region={items.region ? items.region : ""}
                 population={items.population}
               />
-            </li>
+            </Link>
           );
         })}
       </Box>

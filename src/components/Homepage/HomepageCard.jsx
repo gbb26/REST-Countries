@@ -16,7 +16,7 @@ export default function HomepageCard(props) {
           height="200"
           image={props.flag}
           alt={props.name}
-          sx={{borderBottom:'1px solid #eee'}}
+          sx={{ borderBottom: "1px solid #eee" }}
         />
         <CardContent>
           <Typography
